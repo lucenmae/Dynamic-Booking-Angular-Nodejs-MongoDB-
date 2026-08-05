@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const AddOnSchema = new Schema(
@@ -7,14 +7,14 @@ const AddOnSchema = new Schema(
     price: { type: Number, required: true, min: 0 },
     extraDurationMinutes: { type: Number, default: 0 },
   },
-  { _id: true }
+  { _id: true },
 );
 
 const ServiceSchema = new Schema(
   {
     categoryId: {
       type: Schema.Types.ObjectId,
-      ref: 'ServiceCategory',
+      ref: "ServiceCategory",
       required: true,
     },
     name: { type: String, required: true, trim: true },
@@ -22,10 +22,10 @@ const ServiceSchema = new Schema(
     durationMinutes: { type: Number, required: true, min: 1 },
     bufferMinutes: { type: Number, default: 0 },
     price: { type: Number, required: true, min: 0 },
-    currency: { type: String, default: 'PHP' },
+    currency: { type: String, default: "PHP" },
     bookingType: {
       type: String,
-      enum: ['staff', 'resource', 'capacity'],
+      enum: ["staff", "resource", "capacity"],
       required: true,
     },
     requiredStaffRole: { type: String },
@@ -40,9 +40,9 @@ const ServiceSchema = new Schema(
     addOns: [AddOnSchema],
     isActive: { type: Boolean, default: true },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 ServiceSchema.index({ categoryId: 1, isActive: 1 });
 
-module.exports = mongoose.model('Service', ServiceSchema);
+module.exports = mongoose.model("Service", ServiceSchema);

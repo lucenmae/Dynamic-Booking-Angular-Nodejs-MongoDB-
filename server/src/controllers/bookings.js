@@ -1,4 +1,4 @@
-const Booking = require('../models/Booking');
+const Booking = require("../models/Booking");
 
 exports.list = async (req, res) => {
   const bookings = await Booking.find().limit(50).lean();
