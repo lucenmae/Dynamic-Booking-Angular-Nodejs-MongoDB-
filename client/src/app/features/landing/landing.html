@@ -1,0 +1,247 @@
+<header
+  class="bg-surface dark:bg-surface-dim text-primary dark:text-inverse-primary font-body-md text-body-md w-full top-0 sticky border-b border-outline-variant/10 z-50"
+>
+  <div class="flex justify-between items-center max-w-7xl mx-auto px-margin-desktop h-16">
+    <div class="flex items-center gap-lg">
+      <span
+        class="font-headline-md text-headline-md text-primary dark:text-inverse-primary font-bold"
+        >Dynamic Booking</span
+      >
+      <nav class="hidden md:flex gap-lg ml-xl">
+        <a
+          class="text-primary font-bold border-b-2 border-primary pb-1 cursor-pointer active:opacity-80"
+          href="#"
+          >Explore</a
+        >
+        <a
+          class="text-secondary dark:text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-80"
+          href="#"
+          >Services</a
+        >
+        <a
+          class="text-secondary dark:text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-80"
+          href="#"
+          >My Bookings</a
+        >
+      </nav>
+    </div>
+    <div class="flex items-center gap-md">
+      <div class="hidden md:flex relative text-muted-foreground">
+        <span
+          class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2"
+          style="font-variation-settings: 'FILL' 0"
+          >search</span
+        >
+        <input
+          hlmInput
+          class="w-48 rounded-full border-none bg-muted/70 pl-10 pr-3 text-sm"
+          placeholder="Search..."
+          type="text"
+        />
+      </div>
+      <button hlmBtn variant="default" size="sm" class="rounded-full px-4">
+        Sign In
+      </button>
+    </div>
+  </div>
+</header>
+<main class="grow">
+  <!-- Hero Section -->
+  <section class="relative pt-2xl pb-3xl px-margin-desktop md:px-margin-desktop overflow-hidden">
+    <div
+      class="absolute inset-0 bg-linear-to-br from-surface-container-high to-surface -z-10"
+    ></div>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-2xl items-center">
+      <div class="space-y-lg z-10">
+        <span hlmBadge variant="secondary" class="w-fit">Trusted by modern teams</span>
+        <h1 class="font-display-lg text-display-lg text-on-background">
+          Effortless Scheduling for Professionals.
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+          Streamline your workflow, manage appointments seamlessly, and focus on delivering
+          exceptional service with our modern booking platform.
+        </p>
+        <div class="flex flex-wrap gap-md pt-md">
+          <button hlmBtn variant="default" size="lg" class="rounded-full px-6 shadow-sm">
+            Book Now
+          </button>
+          <button hlmBtn variant="outline" size="lg" class="rounded-full px-6">
+            Learn More
+          </button>
+        </div>
+      </div>
+      <div
+        class="relative h-100 md:h-125 rounded-2xl overflow-hidden shadow-lg border border-outline/10"
+      >
+        <img
+          class="absolute inset-0 w-full h-full object-cover"
+          data-alt="A modern, high-tech professional office environment showcasing a sleek desk setup with a glowing laptop displaying a sophisticated scheduling dashboard. The scene is illuminated by bright, natural daylight streaming through large windows, creating a clean, professional aesthetic. Soft, diffuse lighting highlights the crisp whites and deep blues of the digital interface, emphasizing a sense of organized control and modern efficiency."
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmlo2l0ZW6w4G2c2eEjHIGy0i6SG8Wc_JrZEJV-og0tmA9z30_sSyCKNwyxo8jxz_FLs6Et-kRy_CLWMTdYxHkcyHHEr3E535hxpg78CYA_DDpBFqdgWFZQmOiU55bVz-H4ZWmoun_SIDcWC1naUNrb531LDaLPEJTUxPC4wCIAwfbW1pbIqDg1wbh3Y9rA3IFLPCITqhZRvah99T4xVnf0vF8hr_Nb9Ax529yZaB1dYyVqC8BFQksKg"
+        />
+      </div>
+    </div>
+  </section>
+  <!-- Featured Categories -->
+  <section
+    class="py-2xl px-margin-desktop bg-surface-container-lowest border-y border-outline-variant/10"
+  >
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-xl">
+        <h2 class="font-headline-lg text-headline-lg text-on-background mb-sm">Explore Services</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant">
+          Find the right professional for your specific needs.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+        <!-- Category 1 -->
+        <div
+          hlmCard
+          class="group cursor-pointer rounded-xl border border-border/70 bg-background p-6 transition-all hover:border-primary/30 hover:shadow-md"
+        >
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <span class="material-symbols-outlined text-[24px]">work</span>
+          </div>
+          <h3 class="mb-2 font-semibold text-foreground transition-colors group-hover:text-primary">
+            Consulting
+          </h3>
+          <p class="text-sm text-muted-foreground">Expert advice and strategic planning.</p>
+        </div>
+        <!-- Category 2 -->
+        <div
+          hlmCard
+          class="group cursor-pointer rounded-xl border border-border/70 bg-background p-6 transition-all hover:border-primary/30 hover:shadow-md"
+        >
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10 text-secondary">
+            <span class="material-symbols-outlined text-[24px]">spa</span>
+          </div>
+          <h3 class="mb-2 font-semibold text-foreground transition-colors group-hover:text-primary">
+            Wellness
+          </h3>
+          <p class="text-sm text-muted-foreground">Health, fitness, and relaxation sessions.</p>
+        </div>
+        <!-- Category 3 -->
+        <div
+          hlmCard
+          class="group cursor-pointer rounded-xl border border-border/70 bg-background p-6 transition-all hover:border-primary/30 hover:shadow-md"
+        >
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent-foreground">
+            <span class="material-symbols-outlined text-[24px]">school</span>
+          </div>
+          <h3 class="mb-2 font-semibold text-foreground transition-colors group-hover:text-primary">
+            Lessons
+          </h3>
+          <p class="text-sm text-muted-foreground">Tutoring and skill development classes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- How it Works (Bento Grid Style) -->
+  <section class="py-2xl px-margin-desktop bg-surface">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-xl">
+        <h2 class="font-headline-lg text-headline-lg text-on-background mb-sm">How It Works</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant">
+          A seamless process from discovery to completion.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-md h-auto md:h-125">
+        <!-- Step 1: Discover (Large) -->
+        <div
+          class="md:col-span-2 md:row-span-2 bg-surface-container-low rounded-2xl p-lg border border-outline/10 relative overflow-hidden flex flex-col justify-end"
+        >
+          <div
+            class="absolute inset-0 bg-linear-to-t from-surface-container-high/80 to-transparent z-10"
+          ></div>
+          <div
+            class="absolute inset-0 bg-cover bg-center w-full h-full opacity-60"
+            data-alt="A clean, minimalist grid of professional portraits and service cards displayed on a sleek digital interface, floating slightly above a soft, light-blue abstract background. The lighting is bright and even, emphasizing clarity and modern design principles. The overall aesthetic is professional, organized, and inviting, with a subtle high-tech feel."
+            style="
+              background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADofWi0u_VXeGHkaaiSfcZJD0CGiM9WuQlnXizLSWhZO7Fq6jST-zS1iCzQd1eWNrw-4wldIjZIHqERowflBO3Nnsd4YkofucrDykvcwxczbBHrh5B7zW-TkzPc9WH92I8x2UKaHJuZ0Uv0jWY8oqsbpKBLca-5DA6Gb7R2yZ9Lt9U23bOxuBXvQtw4I5LBCvs9EASis_RpEAud3Mr38T34t_fy_fMMFjhAPVGLSuEy6T2KN4KgR2wow');
+            "
+          ></div>
+          <div class="relative z-20 space-y-sm">
+            <div
+              class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold mb-sm"
+            >
+              1
+            </div>
+            <h3 class="font-headline-md text-headline-md text-on-background">Discover Services</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+              Browse our curated list of professionals and find the perfect match for your
+              requirements.
+            </p>
+          </div>
+        </div>
+        <!-- Step 2: Book (Medium) -->
+        <div
+          class="md:col-span-2 md:row-span-1 bg-secondary-container rounded-2xl p-lg border border-outline/10 flex items-center gap-lg"
+        >
+          <div
+            class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold shrink-0"
+          >
+            2
+          </div>
+          <div>
+            <h3 class="font-headline-md text-headline-md text-on-secondary-container mb-xs">
+              Select a Time
+            </h3>
+            <p class="font-body-sm text-body-sm text-on-secondary-container/80">
+              Choose a convenient slot from real-time availability calendars.
+            </p>
+          </div>
+        </div>
+        <!-- Step 3: Confirm (Small) -->
+        <div
+          class="md:col-span-1 md:row-span-1 bg-surface-container-high rounded-2xl p-lg border border-outline/10 flex flex-col justify-between"
+        >
+          <div
+            class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold mb-md"
+          >
+            3
+          </div>
+          <div>
+            <h3 class="font-label-md text-label-md text-on-background mb-xs">
+              Instant Confirmation
+            </h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              Receive automated details instantly.
+            </p>
+          </div>
+        </div>
+        <!-- Step 4: Manage (Small) -->
+        <div
+          class="md:col-span-1 md:row-span-1 bg-surface-variant rounded-2xl p-lg border border-outline/10 flex flex-col justify-between"
+        >
+          <div
+            class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold mb-md"
+          >
+            4
+          </div>
+          <div>
+            <h3 class="font-label-md text-label-md text-on-background mb-xs">Easy Management</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              Reschedule or cancel with ease.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- Footer Component -->
+<footer
+  class="bg-surface-container-highest dark:bg-surface-container-high text-primary dark:text-inverse-primary font-body-sm text-body-sm w-full py-xl mt-auto"
+>
+  <div
+    class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-7xl mx-auto gap-md"
+  >
+    <div class="font-label-md text-label-md font-bold text-on-surface">
+      © 2024 Dynamic Booking Inc. All rights reserved.
+    </div>
+    <nav class="flex gap-lg">
+      <a class="text-on-surface-variant hover:text-primary underline" href="#">Privacy Policy</a>
+      <a class="text-on-surface-variant hover:text-primary underline" href="#">Terms of Service</a>
+      <a class="text-on-surface-variant hover:text-primary underline" href="#">Contact Support</a>
+    </nav>
+  </div>
+</footer>
