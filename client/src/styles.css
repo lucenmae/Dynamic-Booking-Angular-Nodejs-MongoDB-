@@ -1,3 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+html {
+  background: var(--color-background);
+  color: var(--color-on-background);
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: var(--color-background);
+  color: var(--color-on-background);
+}
