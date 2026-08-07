@@ -1,1 +1,169 @@
-<p>sign-in works!</p>
+<body
+  class="bg-surface text-on-surface min-h-screen flex items-center justify-center relative overflow-hidden font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container"
+>
+  <!-- Decorative Background -->
+  <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+    <div class="bg-blob bg-primary-fixed-dim w-[40vw] h-[40vw] -top-[10vw] -right-[10vw]"></div>
+    <div
+      class="bg-blob bg-surface-container-high w-[50vw] h-[50vw] -bottom-[20vw] -left-[10vw]"
+      style="animation-delay: -5s"
+    ></div>
+  </div>
+  <!-- Main Container (Centered Card) -->
+  <main class="relative z-10 w-full max-w-[440px] px-margin-mobile md:px-0 mx-auto py-3xl">
+    <!-- Glassmorphic Card -->
+    <div
+      class="glass-panel rounded-xl border border-outline-variant/20 shadow-[0_8px_32px_rgba(0,0,0,0.04)] overflow-hidden"
+    >
+      <div class="p-lg md:p-2xl flex flex-col gap-lg md:gap-xl">
+        <!-- Header Section -->
+        <div class="flex flex-col gap-sm text-center">
+          <div class="flex justify-center mb-xs">
+            <div
+              class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary"
+            >
+              <span
+                class="material-symbols-outlined"
+                style="font-size: 28px; font-variation-settings: 'FILL' 1"
+                >calendar_month</span
+              >
+            </div>
+          </div>
+          <h1
+            class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface"
+          >
+            Dynamic Booking
+          </h1>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Welcome back. Please enter your details.
+          </p>
+        </div>
+        <!-- Form -->
+        <form action="#" class="flex flex-col gap-lg" method="POST">
+          <!-- Email Input -->
+          <div class="flex flex-col gap-xs">
+            <label class="font-label-md text-label-md text-on-surface-variant" for="email"
+              >Email Address</label
+            >
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline-variant select-none pointer-events-none"
+                style="font-size: 20px"
+                >mail</span
+              >
+              <input
+                class="w-full h-[48px] pl-[44px] pr-md rounded-lg border border-outline-variant/40 bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md text-on-surface placeholder:text-outline-variant/70 shadow-sm"
+                id="email"
+                name="email"
+                placeholder="name@company.com"
+                required=""
+                type="email"
+              />
+            </div>
+          </div>
+          <!-- Password Input -->
+          <div class="flex flex-col gap-xs">
+            <label class="font-label-md text-label-md text-on-surface-variant" for="password"
+              >Password</label
+            >
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline-variant select-none pointer-events-none"
+                style="font-size: 20px"
+                >lock</span
+              >
+              <input
+                class="w-full h-[48px] pl-[44px] pr-md rounded-lg border border-outline-variant/40 bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md text-on-surface placeholder:text-outline-variant/70 shadow-sm"
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                required=""
+                type="password"
+              />
+            </div>
+          </div>
+          <!-- Options (Remember me & Forgot Password) -->
+          <div class="flex items-center justify-between mt-[-8px]">
+            <div class="flex items-center gap-sm">
+              <input
+                class="h-4 w-4 rounded-[4px] border-outline-variant/60 text-primary focus:ring-primary bg-surface-container-lowest cursor-pointer transition-colors"
+                id="remember-me"
+                name="remember-me"
+                type="checkbox"
+              />
+              <label
+                class="font-body-sm text-body-sm text-on-surface-variant cursor-pointer select-none"
+                for="remember-me"
+              >
+                Remember me
+              </label>
+            </div>
+            <a
+              class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors"
+              href="#"
+            >
+              Forgot password?
+            </a>
+          </div>
+          <!-- Actions -->
+          <div class="flex flex-col gap-md pt-sm">
+            <button
+              class="w-full h-[48px] bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-md text-label-md rounded-lg transition-colors flex items-center justify-center gap-sm shadow-sm active:scale-[0.98]"
+              type="submit"
+            >
+              Sign In
+            </button>
+            <!-- Divider -->
+            <div class="relative flex items-center py-xs">
+              <div class="flex-grow border-t border-outline-variant/20"></div>
+              <span
+                class="flex-shrink-0 px-md font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest"
+                >Or continue with</span
+              >
+              <div class="flex-grow border-t border-outline-variant/20"></div>
+            </div>
+            <!-- Social Login -->
+            <button
+              class="w-full h-[48px] bg-surface-container-lowest border border-outline-variant/40 hover:bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg transition-colors flex items-center justify-center gap-sm shadow-sm active:scale-[0.98]"
+              type="button"
+            >
+              <!-- Inline SVG for Google Logo to avoid external requests and keep it crisp -->
+              <svg class="w-5 h-5" viewbox="0 0 24 24">
+                <path
+                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                  fill="#4285F4"
+                ></path>
+                <path
+                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                  fill="#34A853"
+                ></path>
+                <path
+                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                  fill="#FBBC05"
+                ></path>
+                <path
+                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                  fill="#EA4335"
+                ></path>
+                <path d="M1 1h22v22H1z" fill="none"></path>
+              </svg>
+              Sign in with Google
+            </button>
+          </div>
+        </form>
+      </div>
+      <!-- Footer Action -->
+      <div class="bg-surface-container-low p-md border-t border-outline-variant/10 text-center">
+        <p class="font-body-sm text-body-sm text-on-surface-variant">
+          Don't have an account?
+          <a
+            class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors ml-xs"
+            href="#"
+          >
+            Sign up for free
+          </a>
+        </p>
+      </div>
+    </div>
+  </main>
+</body>
