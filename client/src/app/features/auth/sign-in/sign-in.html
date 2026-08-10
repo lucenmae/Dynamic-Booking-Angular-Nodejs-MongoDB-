@@ -1,169 +1,121 @@
-<body
-  class="bg-surface text-on-surface min-h-screen flex items-center justify-center relative overflow-hidden font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container"
->
-  <!-- Decorative Background -->
-  <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-    <div class="bg-blob bg-primary-fixed-dim w-[40vw] h-[40vw] -top-[10vw] -right-[10vw]"></div>
-    <div
-      class="bg-blob bg-surface-container-high w-[50vw] h-[50vw] -bottom-[20vw] -left-[10vw]"
-      style="animation-delay: -5s"
-    ></div>
+<div class="min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.16),_transparent_30%),radial-gradient(circle_at_top_right,_rgba(14,165,233,0.14),_transparent_28%),linear-gradient(180deg,_#f8fafc_0%,_#f1f5f9_100%)] text-foreground">
+  <div class="pointer-events-none fixed inset-0 overflow-hidden">
+    <div class="absolute -left-24 top-14 h-72 w-72 rounded-full bg-primary/20 blur-3xl"></div>
+    <div class="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-sky-400/20 blur-3xl"></div>
   </div>
-  <!-- Main Container (Centered Card) -->
-  <main class="relative z-10 w-full max-w-[440px] px-margin-mobile md:px-0 mx-auto py-3xl">
-    <!-- Glassmorphic Card -->
-    <div
-      class="glass-panel rounded-xl border border-outline-variant/20 shadow-[0_8px_32px_rgba(0,0,0,0.04)] overflow-hidden"
-    >
-      <div class="p-lg md:p-2xl flex flex-col gap-lg md:gap-xl">
-        <!-- Header Section -->
-        <div class="flex flex-col gap-sm text-center">
-          <div class="flex justify-center mb-xs">
-            <div
-              class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary"
-            >
-              <span
-                class="material-symbols-outlined"
-                style="font-size: 28px; font-variation-settings: 'FILL' 1"
-                >calendar_month</span
-              >
-            </div>
+
+  <main class="relative mx-auto flex min-h-screen w-full max-w-6xl items-center px-4 py-10 sm:px-6 lg:px-8">
+    <section hlmCard class="grid w-full overflow-hidden border border-border/60 bg-card/90 shadow-[0_30px_120px_rgba(15,23,42,0.18)] backdrop-blur-xl xl:grid-cols-[1.02fr_0.98fr]">
+      <div class="hidden flex-col justify-between gap-10 border-r border-border/60 bg-slate-950 p-10 text-slate-50 xl:flex">
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200">
+            <svg lucideSparkles class="size-4 text-sky-300" aria-hidden="true"></svg>
+            Secure booking access
           </div>
-          <h1
-            class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface"
-          >
-            Dynamic Booking
-          </h1>
-          <p class="font-body-md text-body-md text-on-surface-variant">
-            Welcome back. Please enter your details.
-          </p>
+          <div class="space-y-4">
+            <h1 class="max-w-sm text-4xl font-semibold tracking-tight text-white">Welcome back to Dynamic Booking</h1>
+            <p class="max-w-md text-base leading-7 text-slate-300">
+              Sign in to manage appointments, track service availability, and keep every booking in one place.
+            </p>
+          </div>
         </div>
-        <!-- Form -->
-        <form action="#" class="flex flex-col gap-lg" method="POST">
-          <!-- Email Input -->
-          <div class="flex flex-col gap-xs">
-            <label class="font-label-md text-label-md text-on-surface-variant" for="email"
-              >Email Address</label
-            >
-            <div class="relative">
-              <span
-                class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline-variant select-none pointer-events-none"
-                style="font-size: 20px"
-                >mail</span
-              >
-              <input
-                class="w-full h-[48px] pl-[44px] pr-md rounded-lg border border-outline-variant/40 bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md text-on-surface placeholder:text-outline-variant/70 shadow-sm"
-                id="email"
-                name="email"
-                placeholder="name@company.com"
-                required=""
-                type="email"
-              />
+
+        <div class="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-6">
+          <div class="flex items-start gap-3">
+            <svg lucideShieldCheck class="mt-1 size-5 shrink-0 text-emerald-300" aria-hidden="true"></svg>
+            <div>
+              <p class="font-medium text-white">Protected by design</p>
+              <p class="text-sm leading-6 text-slate-300">Spartan primitives keep the form crisp, consistent, and accessible.</p>
             </div>
           </div>
-          <!-- Password Input -->
-          <div class="flex flex-col gap-xs">
-            <label class="font-label-md text-label-md text-on-surface-variant" for="password"
-              >Password</label
-            >
-            <div class="relative">
-              <span
-                class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline-variant select-none pointer-events-none"
-                style="font-size: 20px"
-                >lock</span
-              >
-              <input
-                class="w-full h-[48px] pl-[44px] pr-md rounded-lg border border-outline-variant/40 bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md text-on-surface placeholder:text-outline-variant/70 shadow-sm"
-                id="password"
-                name="password"
-                placeholder="••••••••"
-                required=""
-                type="password"
-              />
+          <div class="flex items-start gap-3">
+            <svg lucideCircleCheck class="mt-1 size-5 shrink-0 text-sky-300" aria-hidden="true"></svg>
+            <div>
+              <p class="font-medium text-white">Fast to scan</p>
+              <p class="text-sm leading-6 text-slate-300">A compact layout surfaces the primary action without visual noise.</p>
             </div>
           </div>
-          <!-- Options (Remember me & Forgot Password) -->
-          <div class="flex items-center justify-between mt-[-8px]">
-            <div class="flex items-center gap-sm">
-              <input
-                class="h-4 w-4 rounded-[4px] border-outline-variant/60 text-primary focus:ring-primary bg-surface-container-lowest cursor-pointer transition-colors"
-                id="remember-me"
-                name="remember-me"
-                type="checkbox"
-              />
-              <label
-                class="font-body-sm text-body-sm text-on-surface-variant cursor-pointer select-none"
-                for="remember-me"
-              >
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 lg:p-10">
+        <div class="mx-auto flex w-full max-w-md flex-col gap-8">
+          <div class="space-y-4 text-center sm:text-left">
+            <div class="inline-flex items-center gap-2 rounded-full border border-border/70 bg-muted/40 px-4 py-2 text-sm font-medium text-foreground">
+              <svg lucideSparkles class="size-4 text-primary" aria-hidden="true"></svg>
+              Dynamic Booking
+            </div>
+            <div class="space-y-2">
+              <h2 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Sign in</h2>
+              <p class="text-sm leading-6 text-muted-foreground sm:text-base">Use your account to continue managing bookings.</p>
+            </div>
+          </div>
+
+          <form class="space-y-5">
+            <div class="space-y-2">
+              <label class="text-sm font-medium text-foreground" for="email">Email address</label>
+              <div class="relative">
+                <svg lucideMail class="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true"></svg>
+                <input
+                  class="!h-12 w-full rounded-xl border-border/70 bg-background pl-10 pr-4 text-sm shadow-sm placeholder:text-muted-foreground"
+                  hlmInput
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="name@company.com"
+                  required
+                  type="email"
+                />
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-sm font-medium text-foreground" for="password">Password</label>
+              <div class="relative">
+                <svg lucideLockKeyhole class="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true"></svg>
+                <input
+                  class="!h-12 w-full rounded-xl border-border/70 bg-background pl-10 pr-4 text-sm shadow-sm placeholder:text-muted-foreground"
+                  hlmInput
+                  id="password"
+                  name="password"
+                  autocomplete="current-password"
+                  placeholder="Enter your password"
+                  required
+                  type="password"
+                />
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-4">
+              <label class="flex items-center gap-3 text-sm text-muted-foreground">
+                <hlm-checkbox aria-label="Remember me" name="remember-me"></hlm-checkbox>
                 Remember me
               </label>
+              <a class="text-sm font-medium text-primary transition-colors hover:text-primary/80" href="#">Forgot password?</a>
             </div>
-            <a
-              class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors"
-              href="#"
-            >
-              Forgot password?
-            </a>
-          </div>
-          <!-- Actions -->
-          <div class="flex flex-col gap-md pt-sm">
-            <button
-              class="w-full h-[48px] bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-md text-label-md rounded-lg transition-colors flex items-center justify-center gap-sm shadow-sm active:scale-[0.98]"
-              type="submit"
-            >
-              Sign In
+
+            <button hlmBtn class="!h-12 w-full rounded-xl px-5 text-sm font-semibold" type="submit">
+              Sign in
+              <svg lucideArrowRight class="size-4" aria-hidden="true"></svg>
             </button>
-            <!-- Divider -->
-            <div class="relative flex items-center py-xs">
-              <div class="flex-grow border-t border-outline-variant/20"></div>
-              <span
-                class="flex-shrink-0 px-md font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest"
-                >Or continue with</span
-              >
-              <div class="flex-grow border-t border-outline-variant/20"></div>
+
+            <div class="relative flex items-center py-1">
+              <span class="flex-1 border-t border-border/70"></span>
+              <span class="px-3 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Or</span>
+              <span class="flex-1 border-t border-border/70"></span>
             </div>
-            <!-- Social Login -->
-            <button
-              class="w-full h-[48px] bg-surface-container-lowest border border-outline-variant/40 hover:bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg transition-colors flex items-center justify-center gap-sm shadow-sm active:scale-[0.98]"
-              type="button"
-            >
-              <!-- Inline SVG for Google Logo to avoid external requests and keep it crisp -->
-              <svg class="w-5 h-5" viewbox="0 0 24 24">
-                <path
-                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                  fill="#4285F4"
-                ></path>
-                <path
-                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                  fill="#34A853"
-                ></path>
-                <path
-                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                  fill="#FBBC05"
-                ></path>
-                <path
-                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                  fill="#EA4335"
-                ></path>
-                <path d="M1 1h22v22H1z" fill="none"></path>
-              </svg>
-              Sign in with Google
+
+            <button hlmBtn variant="outline" class="!h-12 w-full rounded-xl px-5 text-sm font-semibold" type="button">
+              Continue with another account
             </button>
-          </div>
-        </form>
+          </form>
+
+          <p class="text-center text-sm text-muted-foreground sm:text-left">
+            New here?
+            <a class="font-medium text-primary transition-colors hover:text-primary/80" routerLink="/sign-up">Create an account</a>
+          </p>
+        </div>
       </div>
-      <!-- Footer Action -->
-      <div class="bg-surface-container-low p-md border-t border-outline-variant/10 text-center">
-        <p class="font-body-sm text-body-sm text-on-surface-variant">
-          Don't have an account?
-          <a
-            class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors ml-xs"
-            href="#"
-          >
-            Sign up for free
-          </a>
-        </p>
-      </div>
-    </div>
+    </section>
   </main>
-</body>
+</div>
