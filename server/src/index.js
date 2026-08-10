@@ -3,6 +3,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const connectDB = require("./config/db");
+require("./models/User");
 
 const PORT = process.env.PORT || 4000;
 
@@ -19,6 +20,7 @@ async function start() {
   );
 
   // Placeholder route mounts
+  app.use("/api/auth", require("./routes/auth"));
   app.use("/api/bookings", require("./routes/bookings"));
 
   app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
