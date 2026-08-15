@@ -18,10 +18,10 @@ async function seed() {
 
   const users = [
     {
-      name: "Admin User",
+      name: "Super Admin",
       email: "admin@example.com",
       passwordHash: hashPassword("Admin123!"),
-      role: "admin",
+      role: "super-admin",
     },
     {
       name: "Customer User",
