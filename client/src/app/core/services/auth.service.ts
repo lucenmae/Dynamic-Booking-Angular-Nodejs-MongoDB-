@@ -62,6 +62,10 @@ export class AuthService {
     return this.browser ? localStorage.getItem(ACCESS_TOKEN_KEY) : null;
   }
 
+  getCurrentUser(): AuthUser | null {
+    return this.readStoredUser();
+  }
+
   private async authenticate(
     endpoint: 'signup' | 'signin',
     payload: SignUpPayload | SignInPayload,
