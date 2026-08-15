@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import {
   LucideArrowRight,
@@ -18,6 +20,8 @@ import { AuthService } from '../../../core/services/auth.service';
 @Component({
   selector: 'app-sign-up',
   imports: [
+    CommonModule,
+    FormsModule,
     RouterLink,
     ...HlmButtonImports,
     ...HlmCardImports,
@@ -35,7 +39,8 @@ import { AuthService } from '../../../core/services/auth.service';
   styleUrl: './sign-up.css',
 })
 export class SignUp {
-  name = '';
+  firstName = '';
+  lastName = '';
   email = '';
   password = '';
   confirmPassword = '';
@@ -52,7 +57,9 @@ export class SignUp {
     this.errorMessage = '';
     this.successMessage = '';
 
-    if (!this.name.trim() || !this.email.trim() || !this.password) {
+    const fullName = `${this.firstName} ${this.lastName}`.trim();
+
+    if (!fullName || !this.email.trim() || !this.password) {
       this.errorMessage = 'Please fill in all required fields.';
       return;
     }
@@ -66,15 +73,15 @@ export class SignUp {
 
     try {
       const response = await this.authService.signUp({
-        name: this.name.trim(),
+        name: fullName,
         email: this.email.trim(),
         password: this.password,
       });
 
       this.successMessage = response?.user ? 'Account created successfully.' : 'Account created.';
-      this.router.navigate(['/']);
+      this.router.navigate(['/app']);
     } catch (error: any) {
-      this.errorMessage = error?.error?.error || 'Unable to create account right now.';
+      this.errorMessage = error?.message || 'Unable to create account right now.';
     } finally {
       this.isSubmitting = false;
     }
