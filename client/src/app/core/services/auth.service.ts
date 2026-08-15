@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { catchError, firstValueFrom, throwError } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { isTokenExpired } from '../../shared/utils/jwt.util';
 
 const ACCESS_TOKEN_KEY = 'dynamic-booking.access-token';
 const USER_KEY = 'dynamic-booking.user';
@@ -39,7 +40,10 @@ export class AuthService {
 
   private readonly currentUserSignal = signal<AuthUser | null>(this.readStoredUser());
   readonly currentUser = this.currentUserSignal.asReadonly();
-  readonly isAuthenticated = computed(() => !!this.currentUserSignal());
+  readonly isAuthenticated = computed(() => {
+    const token = this.getToken();
+    return !!this.currentUserSignal() && !!token && !isTokenExpired(token);
+  });
 
   async signUp(payload: SignUpPayload): Promise<AuthResponse> {
     return this.authenticate('signup', payload);
