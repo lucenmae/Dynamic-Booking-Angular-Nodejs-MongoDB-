@@ -69,7 +69,7 @@ export class AuthService {
     const response = await firstValueFrom(
       this.http.post<AuthResponse>(`${this.baseUrl}/${endpoint}`, payload).pipe(
         catchError((error: HttpErrorResponse) => {
-          const message = error.error?.message ?? 'Something went wrong. Please try again.';
+          const message = error.error?.message ?? error.error?.error ?? 'Something went wrong. Please try again.';
           return throwError(() => new Error(message));
         }),
       ),
