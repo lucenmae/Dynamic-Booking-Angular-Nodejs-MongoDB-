@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 
+import { Dashboard } from '../features/admin/dashboard/dashboard';
+import { adminRoutes } from '../features/admin/admin-routes.routes';
 import { authGuard } from '../core/guards/auth.guard';
 
 export const protectedRoutes: Routes = [
@@ -11,6 +13,6 @@ export const protectedRoutes: Routes = [
   {
     path: 'admin',
     canActivate: [authGuard],
-    children: [],
+    children: [{ path: '', component: Dashboard }, ...adminRoutes],
   },
 ];
