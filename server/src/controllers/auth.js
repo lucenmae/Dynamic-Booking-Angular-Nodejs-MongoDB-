@@ -1,6 +1,14 @@
 const crypto = require("crypto");
 const User = require("../models/User");
 
+function toBase64Url(value) {
+  return Buffer.from(value)
+    .toString("base64")
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/g, "");
+}
+
 function hashPassword(password) {
   const salt = crypto.randomBytes(16).toString("hex");
   const derived = crypto
@@ -22,22 +30,51 @@ function verifyPassword(password, storedHash) {
 }
 
 function createToken(user) {
-  return crypto.randomBytes(24).toString("hex");
+  const secret = process.env.JWT_SECRET || "dynamic-booking-dev-secret";
+  const now = Math.floor(Date.now() / 1000);
+  const payload = {
+    sub: String(user?._id || user?.id || user?.email || "unknown"),
+    email: user?.email,
+    role: user?.role || "customer",
+    iat: now,
+    exp: now + 60 * 60 * 24,
+  };
+
+  const headerSegment = toBase64Url(
+    JSON.stringify({ alg: "HS256", typ: "JWT" }),
+  );
+  const payloadSegment = toBase64Url(JSON.stringify(payload));
+  const signingInput = `${headerSegment}.${payloadSegment}`;
+  const signature = crypto
+    .createHmac("sha256", secret)
+    .update(signingInput)
+    .digest("base64")
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/g, "");
+
+  return `${signingInput}.${signature}`;
 }
+
+exports.createToken = createToken;
 
 exports.signUp = async (req, res) => {
   try {
     const { name, email, password } = req.body || {};
 
     if (!name || !email || !password) {
-      return res.status(400).json({ error: "Name, email, and password are required" });
+      return res
+        .status(400)
+        .json({ error: "Name, email, and password are required" });
     }
 
     const normalizedEmail = String(email).trim().toLowerCase();
     const existingUser = await User.findOne({ email: normalizedEmail });
 
     if (existingUser) {
-      return res.status(409).json({ error: "An account with that email already exists" });
+      return res
+        .status(409)
+        .json({ error: "An account with that email already exists" });
     }
 
     const user = await User.create({
